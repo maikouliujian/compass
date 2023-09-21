@@ -36,6 +36,7 @@ public class DiagnosisParamsConstants {
      * 单tm cpu利用率太低的阈值
      */
     public Double tmCpuUsageCutThreshold = 0.4d;
+
     /**
      * 单tm cpu利用率太低的目标值
      */

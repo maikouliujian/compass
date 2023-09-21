@@ -16,6 +16,7 @@
 
 package com.oppo.cloud.common.domain.flink.enums;
 
+
 /**
  * 诊断参数
  */

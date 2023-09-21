@@ -25,6 +25,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * http客户端
  */
+
 @Component
 public class RestTemplateUtil {
 

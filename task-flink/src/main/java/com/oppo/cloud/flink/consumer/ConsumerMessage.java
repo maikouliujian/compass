@@ -72,6 +72,7 @@ public class ConsumerMessage {
                                          Consumer consumer,
                                          Acknowledgment ack) {
         log.debug(String.format("%d, From partition %d: %s", consumer.hashCode(), partition, message));
+        //todo
         // 解析数据结构
         FlinkTaskApp flinkTaskApp = JSON.parseObject(message, FlinkTaskApp.class);
         try {

@@ -101,6 +101,7 @@ public class FlinkDiagnosisMetricsServiceImpl {
      * @param end    结束时间戳 秒级别
      * @return 查询结果
      */
+    //todo 用promQl查询数据
     public List<MetricResult.DataResult> getJobMetrics(String promQl, long start, long end) {
         int step = monitorMetricUtil.getStep(start, end);
         return getJobMetrics(promQl, start, end, step);
@@ -115,6 +116,7 @@ public class FlinkDiagnosisMetricsServiceImpl {
         String jobUpTime = addLabel(promQl, "job", context.getMessages().get(Job).toString());
         return getJobMetrics(jobUpTime, start, end);
     }
+
 
     public List<MetricResult.DataResult> getTaskManagerMetrics(String promQl, DiagnosisContext context, long start, long end) {
         List<MetricResult.DataResult> res = new ArrayList<>();
@@ -334,6 +336,7 @@ public class FlinkDiagnosisMetricsServiceImpl {
                 getTaskManagerMetrics(TM_AVG_CPU_USAGE_RATE, context, start, end);
         rcJobDiagnosis.setTmAvgCpuUsageMax(doubleToFloat(monitorMetricUtil.getMaxOrNull(tmAvgCpuUsageRateMetrics)));
         rcJobDiagnosis.setTmAvgCpuUsageMin(doubleToFloat(monitorMetricUtil.getMinOrNull(tmAvgCpuUsageRateMetrics)));
+
         rcJobDiagnosis.setTmAvgCpuUsageAvg(doubleToFloat(monitorMetricUtil.getAvgOrNull(tmAvgCpuUsageRateMetrics)));
         context.getMetrics().put(TM_AVG_CPU_USAGE_RATE, tmAvgCpuUsageRateMetrics);
         // tm 单个cpu使用率

@@ -117,6 +117,7 @@ public class SparkEventLogParser extends OneClickSubject implements IParser {
 
         DetectorManager detectorManager = new DetectorManager();
         // run all detector
+        //todo 运行所有分析器
         DetectorStorage detectorStorage = detectorManager.run(detectorParam);
 
         detectorStorage.setEnv(env);

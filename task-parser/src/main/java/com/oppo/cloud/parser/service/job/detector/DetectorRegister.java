@@ -245,6 +245,7 @@ public class DetectorRegister {
             this.detectors.add(new MRGCDetector(this.param));
             return;
         }
+
         MRGCConfig gcConfig = this.config.getMrGCConfig();
         if (!gcConfig.getDisable() && durationFilter(gcConfig.getDuration())) {
             this.detectors.add(new MRGCDetector(this.param));

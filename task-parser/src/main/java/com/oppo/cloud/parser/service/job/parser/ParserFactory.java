@@ -22,6 +22,7 @@ import com.oppo.cloud.parser.service.job.oneclick.IProgressListener;
 
 public class ParserFactory {
 
+    //todo 日志解析工厂
     /**
      * create parser
      */

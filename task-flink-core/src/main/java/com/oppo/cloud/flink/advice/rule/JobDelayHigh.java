@@ -64,7 +64,7 @@ public class JobDelayHigh extends BaseRule {
 
     @Autowired
     MemTurningByUsage memTurningByUsage;
-
+    //todo 处理指标！！！！！！
     @Override
     public RcJobDiagnosisAdvice advice(DiagnosisContext context) {
         RcJobDiagnosis rcJobDiagnosis = context.getRcJobDiagnosis();

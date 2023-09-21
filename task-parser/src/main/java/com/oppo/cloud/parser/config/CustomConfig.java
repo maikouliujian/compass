@@ -29,6 +29,7 @@ import java.util.List;
  * custom yml config
  */
 @Configuration
+//todo
 @ConfigurationProperties(prefix = "custom")
 @Data
 public class CustomConfig {
@@ -72,7 +73,7 @@ public class CustomConfig {
     private List<String> jvmType;
 
     public static final String GC_CONFIG = "gcConfig";
-
+    //todo GC_CONFIG
     @Bean(name = GC_CONFIG)
     public List<String> loadGCConfig() {
         return jvmType;

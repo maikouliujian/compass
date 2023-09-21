@@ -33,6 +33,7 @@ import java.util.Map;
 /**
  * spark event log 解析
  */
+//todo 日志解析
 @Slf4j
 @Data
 public class ReplaySparkEventLogs {

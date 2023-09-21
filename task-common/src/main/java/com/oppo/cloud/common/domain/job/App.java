@@ -57,6 +57,7 @@ public class App {
             logInfo.setLogGroup(LogGroupType.SPARK.getName());
             logPathMap.put(LogType.SPARK_EVENT.getName(), Collections.singletonList(new LogPath(ProtocolType.HDFS.getName(),
                     LogType.SPARK_EVENT.getName(), LogPathType.FILE, taskApp.getEventLogPath())));
+            //todo ！！！！！！SPARK_EXECUTOR log
             logPathMap.put(LogType.SPARK_EXECUTOR.getName(), Collections.singletonList(new LogPath(ProtocolType.HDFS.getName(),
                     LogType.SPARK_EXECUTOR.getName(), LogPathType.DIRECTORY, taskApp.getYarnLogPath())));
             logInfo.setLogPathMap(logPathMap);
@@ -72,6 +73,7 @@ public class App {
             logPathMap.put(LogType.MAPREDUCE_JOB_HISTORY.getName(), logPathList);
             logPathMap.put(LogType.MAPREDUCE_CONTAINER.getName(), Collections.singletonList(new LogPath(ProtocolType.HDFS.getName(),
                     LogType.MAPREDUCE_CONTAINER.getName(), LogPathType.DIRECTORY, taskApp.getYarnLogPath())));
+            //todo
             logInfo.setLogPathMap(logPathMap);
         }
 

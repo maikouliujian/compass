@@ -22,6 +22,7 @@ import lombok.Data;
 /**
  * 异常检测各项阈值
  */
+//todo 异常检测各项阈值
 @Data
 public class DetectorConfig {
 

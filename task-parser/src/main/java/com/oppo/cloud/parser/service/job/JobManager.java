@@ -107,7 +107,7 @@ public class JobManager {
         }
 
         long start = System.currentTimeMillis();
-
+        //todo 入口
         List<CompletableFuture<TaskResult>> futures = createFutures(tasks, jobExecutorPool);
 
         List<TaskResult> taskResults = new ArrayList<>();
@@ -125,6 +125,7 @@ public class JobManager {
         }
 
         try {
+            //todo 写入es
             ElasticWriter.getInstance().saveTaskResults(logRecord, taskResults);
         } catch (Exception e) {
             log.error("Exception:", e);

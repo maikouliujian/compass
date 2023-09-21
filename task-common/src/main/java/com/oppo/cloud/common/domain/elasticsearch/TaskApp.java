@@ -208,6 +208,7 @@ public class TaskApp extends EsInfo {
         if ("".equals(yarnLogPath)) {
             throw new Exception(String.format("can not find yarn log path: rm ip : %s", yarnApp.getIp()));
         }
+        //todo 获取yarn的log日志
         // todo adapt to different hadoop versions
         this.yarnLogPath = yarnLogPath + "/" + yarnApp.getUser() + "/logs/" + this.applicationId;
 

@@ -64,6 +64,7 @@ public class DiagnosisContext {
     /**
      * 诊断指标
      */
+    //todo 将指标放入！！！！！！
     private Map<String, List<MetricResult.DataResult>> metrics;
     /**
      * 诊断消息

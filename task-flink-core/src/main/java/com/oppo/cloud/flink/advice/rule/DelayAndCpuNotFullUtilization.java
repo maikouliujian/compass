@@ -207,6 +207,7 @@ public class DelayAndCpuNotFullUtilization extends BaseRule {
                 diagnosisRuleLineChartCpu.setYAxisUnit("(%)");
                 diagnosisRuleLineChartCpu.setYAxisValueType(DiagnosisReportYAxisType.Percent.name());
                 DiagnosisRuleLine cpuLine = new DiagnosisRuleLine();
+
                 List<MetricResult.DataResult> cpuUsageList = context.getMetrics().get(TM_AVG_CPU_USAGE_RATE);
                 cpuLine.setLabel("作业CPU使用率");
                 cpuLine.setData(cpuUsageList);

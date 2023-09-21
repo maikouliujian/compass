@@ -131,7 +131,7 @@ public class HDFSUtil {
             }
         }
     }
-
+    //todo 读取日志目录！！！！！！
     public static ReaderObject getReaderObject(NameNodeConf nameNode, String path) throws Exception {
         FileSystem fs = HDFSUtil.getFileSystem(nameNode);
         FSDataInputStream fsDataInputStream = fs.open(new Path(path));

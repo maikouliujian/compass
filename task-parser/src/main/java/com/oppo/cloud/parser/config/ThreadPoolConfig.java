@@ -26,6 +26,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * Executor pool config
+ *
  */
 @Configuration
 public class ThreadPoolConfig {

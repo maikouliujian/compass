@@ -43,9 +43,11 @@ import java.util.stream.Collectors;
 /**
  * gc日志解析
  */
+
+//todo gc日志解析
 @Slf4j
 public class GCReportUtil {
-
+    //todo gc日志从哪里取？？？？？？
     public static List<GCReport> generateGCReports(Map<Integer, InputStream> gcLogMap,
                                                    String logPath) throws IOException {
         if (gcLogMap == null) {
@@ -53,6 +55,7 @@ public class GCReportUtil {
         }
         List<GCReport> gcReports = new ArrayList<>();
         for (Map.Entry<Integer, InputStream> exeGc : gcLogMap.entrySet()) {
+            //todo 解析gc日志
             GCReport gcReport = GCReportUtil.generateGCReport(exeGc.getValue());
             gcReport.setLogPath(logPath);
             gcReport.setExecutorId(exeGc.getKey());
@@ -71,6 +74,7 @@ public class GCReportUtil {
         Logger logger =  Logger.getLogger("gcLog");
         logger.setLevel(Level.WARNING);
         gcResource.setLogger(logger);
+        //todo gc
         DataReader reader = new DataReaderFactory().getDataReader(gcResource, in);
         GCModel model = reader.read();
 
@@ -78,6 +82,7 @@ public class GCReportUtil {
         footprintFormatter.setMaximumFractionDigits(1);
         DateFormat totalTimeFormatter = new TimeFormat();
         GCReport gcReport = new GCReport();
+
 
         gcReport.setMaxHeapAllocatedSize(model.getHeapAllocatedSizes().getMax());
         gcReport.setMaxHeapUsedSize(model.getHeapUsedSizes().getMax());

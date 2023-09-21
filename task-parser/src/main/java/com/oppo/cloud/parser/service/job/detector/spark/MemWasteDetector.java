@@ -39,6 +39,7 @@ public class MemWasteDetector {
         this.config = config;
     }
 
+
     public DetectorResult detect(List<GCReport> gcReports, MemoryCalculateParam memoryCalculateParam) {
         DetectorResult<MemWasteAbnormal> detectorResult =
                 new DetectorResult<>(AppCategoryEnum.MEMORY_WASTE.getCategory(), false);

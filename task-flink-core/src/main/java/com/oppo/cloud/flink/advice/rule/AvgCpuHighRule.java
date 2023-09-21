@@ -43,6 +43,7 @@ import static com.oppo.cloud.flink.constant.MonitorMetricConstant.TM_AVG_CPU_USA
 /**
  * 根据cpu和mem使用的均值判断是否需要扩容
  */
+
 @Component
 public class AvgCpuHighRule extends BaseRule {
 

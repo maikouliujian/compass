@@ -60,6 +60,7 @@ public class CpuWasteService extends ResourceBaseService<CpuWasteInfo> {
         return cpuWasteInfo;
     }
 
+
     @Override
     public String generateConclusionDesc(IsAbnormal data) {
         return String.format(

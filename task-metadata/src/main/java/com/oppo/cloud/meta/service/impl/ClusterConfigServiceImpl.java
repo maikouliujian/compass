@@ -98,6 +98,7 @@ public class ClusterConfigServiceImpl implements IClusterConfigService {
         // cache yarn server
         List<YarnConf> yarnConfList = config.getYarn();
         // resourceManager 对应的 jobHistoryServer
+        //todo
         Map<String, String> rmJhsMap = new HashMap<>();
         yarnConfList.forEach(clusterInfo -> clusterInfo.getResourceManager()
                 .forEach(rm -> rmJhsMap.put(rm, clusterInfo.getJobHistoryServer())));

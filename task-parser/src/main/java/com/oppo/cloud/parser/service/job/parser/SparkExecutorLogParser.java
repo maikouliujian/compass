@@ -63,10 +63,12 @@ public class SparkExecutorLogParser extends CommonTextParser implements IParser 
         this.param = param;
         this.isOneClick = param.getLogRecord().getIsOneClick();
         parserThreadPool = (ThreadPoolTaskExecutor) SpringBeanUtil.getBean(ThreadPoolConfig.PARSER_THREAD_POOL);
+        //todo：- Java HotSpot
+        //    - OpenJDK
         jvmTypeList = (List<String>) SpringBeanUtil.getBean(CustomConfig.GC_CONFIG);
 
     }
-
+    //todo 核心逻辑！！！！！！！！！！！！！！！
     public CommonResult run() {
         updateParserProgress(ProgressState.PROCESSING, 0, 0);
         CommonResult<List<SparkExecutorLogParserResult>> commonResult = new CommonResult<>();
@@ -80,6 +82,7 @@ public class SparkExecutorLogParser extends CommonTextParser implements IParser 
                 log.error("Exception:", e);
                 continue;
             }
+            //todo gc日志解析入口！！！！！！
             if (readerObjects.size() > 0) {
                 updateParserProgress(ProgressState.PROCESSING, 0, readerObjects.size());
                 List<SparkExecutorLogParserResult> results = handleReaderObjects(readerObjects);
@@ -121,6 +124,7 @@ public class SparkExecutorLogParser extends CommonTextParser implements IParser 
         String logType = getLogType(readerObject.getLogPath());
         SparkExecutorLogParserResult result = null;
         try {
+            //todo
             result = parseAction(logType, readerObject);
         } catch (Exception e) {
             log.error("Exception:", e);
@@ -135,6 +139,7 @@ public class SparkExecutorLogParser extends CommonTextParser implements IParser 
 
 
     private SparkExecutorLogParserResult parseAction(String logType, ReaderObject readerObject) throws Exception {
+        //todo
         SparkExecutorLogParserResult result = parseRootAction(logType, readerObject);
         for (Map.Entry<String, ParserAction> action : result.getActionMap().entrySet()) {
             ParserManager.parseChildActions(action.getValue());
@@ -142,6 +147,7 @@ public class SparkExecutorLogParser extends CommonTextParser implements IParser 
         return result;
     }
 
+    //todo 获取gc日志
     private SparkExecutorLogParserResult parseRootAction(String logType, ReaderObject readerObject) throws Exception {
         List<ParserAction> actions = DiagnosisConfig.getInstance().getActions(logType);
         Map<Integer, InputStream> gcLogMap = new HashMap<>();

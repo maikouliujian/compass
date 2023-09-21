@@ -196,6 +196,7 @@ public class DiagnosisServiceImpl implements DiagnosisService {
 
         // 1、元数据填到诊断结果中
         // 从flink ui config 获取 jobName,运行配置参数,如果访问不到，说明作业有问题
+        //todo 获取config信息
         List<JobManagerConfigItem> flinkConfigItems = flinkMetaService.reqFlinkConfig(flinkTaskApp.getFlinkTrackUrl());
         if (flinkConfigItems == null) {
             log.info("flink ui无法访问 {}", flinkTaskApp.getFlinkTrackUrl());
@@ -219,7 +220,7 @@ public class DiagnosisServiceImpl implements DiagnosisService {
         DiagnosisContext context = new DiagnosisContext(rcJobDiagnosis, start, end, flinkDiagnosisMetricsServiceImpl, from);
         context.getMessages().put(DiagnosisParam.JobId, jobId);
         context.getMessages().put(DiagnosisParam.TmIds, tmIds);
-
+        //todo flink 诊断！！！！！！
         // 2、执行诊断阶段
         diagnosisDoctor.diagnosis(context);
         if (context.getStopResourceDiagnosis()) {
@@ -318,6 +319,7 @@ public class DiagnosisServiceImpl implements DiagnosisService {
      * @param end
      * @param from
      */
+
     @Override
     public void diagnosisAllApp(long start, long end, DiagnosisFrom from) {
         FlinkTaskAppExample example = new FlinkTaskAppExample();
@@ -332,6 +334,7 @@ public class DiagnosisServiceImpl implements DiagnosisService {
             try {
                 List<FlinkTaskApp> flinkTaskApps = flinkTaskAppMapper.selectByExample(example);
                 for (FlinkTaskApp flinkTaskApp : flinkTaskApps) {
+                    //todo 诊断！！！！！！
                     diagnosisApp(flinkTaskApp, start, end, from);
                     updateRealtimeTaskAppStatus(flinkTaskApp);
                 }
@@ -411,6 +414,7 @@ public class DiagnosisServiceImpl implements DiagnosisService {
                 List<FlinkTaskApp> flinkTaskApps = flinkTaskAppMapper.selectByExample(example);
                 for (FlinkTaskApp flinkTaskApp : flinkTaskApps) {
 //                    if (checkNeedDiagnosisHourly(flinkTaskApp, start, end)) {
+
                     diagnosisApp(flinkTaskApp, start, end, from);
 //                    }
                 }

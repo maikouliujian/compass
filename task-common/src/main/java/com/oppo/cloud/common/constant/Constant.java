@@ -26,6 +26,7 @@ public class Constant {
      * 天秒数值
      */
     public static final long DAY_SECONDS = 24 * 60 * 60;
+    //todo spark event log
     /**
      * spark event log路径
      */
@@ -43,6 +44,7 @@ public class Constant {
      * resourceManager对应jobHistoryServer
      */
     public static final String RM_JHS_MAP = "rm:jhs:map";
+    //todo path:yarn.nodemanager.remote-app-log-dir
     /**
      * jobHistoryServer conf: yarn.nodemanager.remote-app-log-dir
      */

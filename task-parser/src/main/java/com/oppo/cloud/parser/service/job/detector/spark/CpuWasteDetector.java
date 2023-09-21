@@ -44,6 +44,7 @@ public class CpuWasteDetector implements IDetector {
         this.config = param.getConfig().getCpuWasteConfig();
     }
 
+
     @Override
     public DetectorResult detect() {
 
@@ -61,6 +62,7 @@ public class CpuWasteDetector implements IDetector {
 
         long maxExecutors = getMaxConcurrent();
         long executorCores = Long.parseLong(application.getSparkExecutorCores());
+        //todo
         long totalCores = executorCores * maxExecutors;
 
         long appComputeMillisAvailable = totalCores * appTotalTime;
@@ -99,6 +101,7 @@ public class CpuWasteDetector implements IDetector {
         }
         if ((executorWastedPercentOverAll > executorThreshold || driverWastedPercentOverAll > driverThreshold) &&
                 this.param.getAppDuration() > this.config.getDuration()) {
+            //todo 不正常的！！！！！！
             detectorResult.setAbnormal(true);
         }
         detectorResult.setData(cpuWasteAbnormal);

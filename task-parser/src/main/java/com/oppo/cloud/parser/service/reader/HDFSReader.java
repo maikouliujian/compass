@@ -30,6 +30,7 @@ import java.util.Map;
 /**
  * 读取HDFS类型日志
  */
+//todo 读取HDFS类型日志
 public class HDFSReader implements IReader {
 
     /**

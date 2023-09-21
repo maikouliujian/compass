@@ -69,6 +69,7 @@ public class AvgCpuLowRule extends BaseRule {
         // 判断单个cpu利用率的最大值低于阈值
         List<MetricResult.DataResult> cpuUsageList = r.getMetrics().get(TM_CPU_USAGE_RATE);
         if (cpuUsageList != null && cpuUsageList.size() > 0) {
+            //todo !!!!!!
             Double maxCpuUsage = cpuUsageList.stream()
                     .map(monitorMetricUtil::getFlatKeyValueStream)
                     .map(x -> monitorMetricUtil.getSmoothKeyValueStream(x, 3))

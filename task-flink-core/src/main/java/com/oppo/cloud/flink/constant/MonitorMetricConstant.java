@@ -21,6 +21,7 @@ package com.oppo.cloud.flink.constant;
  */
 public class MonitorMetricConstant {
 
+
     /**
      * query api
      */
@@ -28,6 +29,7 @@ public class MonitorMetricConstant {
     /**
      * tm,整体平均cpu使用率,0-1
      */
+    //todo！！！！！！
     public static final String TM_AVG_CPU_USAGE_RATE = "avg(rate(flink_taskmanager_Status_JVM_CPU_Time"
             + "{}[2m]) / ( 1000 * 1000 * 1000 ))";
     /**

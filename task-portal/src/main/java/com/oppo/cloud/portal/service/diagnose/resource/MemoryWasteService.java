@@ -101,6 +101,7 @@ public class MemoryWasteService extends ResourceBaseService<MemoryWaste> {
         return memoryWaste;
     }
 
+
     @Override
     public String generateConclusionDesc(IsAbnormal data) {
         return String.format(

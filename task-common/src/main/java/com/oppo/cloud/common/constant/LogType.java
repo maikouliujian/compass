@@ -19,7 +19,7 @@ package com.oppo.cloud.common.constant;
 import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
+//todo 不同的日志类型
 public enum LogType {
 
     SCHEDULER("scheduler", "Scheduler Log"),

@@ -118,6 +118,7 @@ public class DiagnosisDoctor {
         }
         List<RcJobDiagnosisAdvice> advices = new ArrayList<>();
         // 每个基本规则都应用一遍
+
         for (IAdviceRule rule : context.getAttentionRules()) {
             try {
                 RcJobDiagnosisAdvice advice = rule.advice(context);

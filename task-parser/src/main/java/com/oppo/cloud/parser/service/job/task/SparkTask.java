@@ -120,6 +120,7 @@ public class SparkTask extends Task {
         if (!this.memWasteConfig.getDisable() && gcReports.size() > 0
                 && sparkEventLogParserResult.getMemoryCalculateParam() != null) {
             MemWasteDetector memWasteDetector = new MemWasteDetector(this.memWasteConfig);
+
             DetectorResult detectorResult =
                     memWasteDetector.detect(gcReports, sparkEventLogParserResult.getMemoryCalculateParam());
             detectorStorage.addDetectorResult(detectorResult);
